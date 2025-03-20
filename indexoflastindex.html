@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+//i want to display uniqe value
+        let array =[1,1,2,2,6,3,5];
+        
+
+        let withoutduplicate = array.reduce(function(pre,next,index,t)
+        {
+        if(t.indexOf(next) == t.lastIndexOf(next))
+        {
+            pre.push(next);
+
+        }
+        return pre;
+
+        },[]);
+
+        console.log(withoutduplicate);
+    </script>
+    
+</body>
+</html>

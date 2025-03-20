@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="term"/>
+    <button onclick="saveInforamtion()">save</button>
+
+    <table id="display">
+
+    </table>
+    <script>
+        const items = [];
+        let index=-1;
+        function saveInforamtion()
+        {
+
+            let p = document.getElementById("term").value;
+            
+        if(index<0)
+        {
+            items.push(p);
+        }
+        else
+        {
+            items[index]= p;
+        }
+        index=-1;
+            displayInformation();
+
+        }
+
+        function displayInformation()
+        {
+            let a = items.map(function(v,index){
+
+                return (`<tr>
+                        <td>${v}</td>
+                         <td>
+                            <button onclick="removeItem(${index})">Delete</button>
+                        </td>
+                         <td>
+                            <button onclick="editItem(${index})">Edit</button>
+                        </td>
+                    </tr>`)
+            });
+
+            document.getElementById("display").innerHTML = a.join(" ");
+
+        }
+
+        function removeItem(d)
+        {
+          
+            items.splice(d,1);
+            displayInformation();
+
+        }
+
+        function editItem(d)
+        {  index=d;
+
+            document.getElementById("term").value = items[d];
+        }
+
+    </script>
+</body>
+</html>

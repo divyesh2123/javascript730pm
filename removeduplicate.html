@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+
+            fetch("https://fakestoreapi.com/products")
+            .then(function(v) {
+                return v.json();
+            })
+            .then(function(p) {
+
+                let o = p.map(function(t) {
+
+                    return t.category;
+                });
+
+
+                let od = new Set(o);
+
+                console.log(od);
+                console.log(o);
+            })
+
+
+    </script>
+    
+</body>
+</html>

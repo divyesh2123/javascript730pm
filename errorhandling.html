@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <div id="displayMessage">display Info</div>
+
+    <script>
+ var a;
+ var b;
+        try
+        {
+        a=-1;
+        b =2;
+            //var c= a.toLocaleUpperCase();
+
+        if(a<0)
+        {
+            throw "This is negetive";
+
+        }
+        }
+        catch(error)
+        {
+            console.log(error);
+            
+          
+            //store error somewhere to notify developer
+        }
+        finally
+        {
+            alert("finally");
+            //clean up code
+            a=0;
+            b=0;
+
+        }
+
+        alert("D");
+
+     
+
+    </script>
+    
+</body>
+</html>

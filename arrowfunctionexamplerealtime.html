@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button name="test" id="a">This is Info</button>
+    <script>
+        //arrow function vs normal function
+        // arrow function for it this means parent 
+        // normal function for it this means calling who call this function 
+        // this is depends on who call it
+        // based on that it value display
+
+            class Test
+            {
+                    name1="2";
+                    display()
+                    {   
+                        console.log(this.name1);
+
+                    }
+
+                    arrow = ()=>{
+                        console.log(this.name1);
+                    }
+            }
+
+            let p = new Test();
+
+            
+            document.getElementById("a").addEventListener("click",p.display)
+
+
+    </script>
+</body>
+</html>

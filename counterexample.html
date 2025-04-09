@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table> 
+
+        <input type="text" />
+        <button>Save</button>
+
+        <tr>
+            <td>
+                <input type="checkbox" />
+            </td>
+            <td>
+                423
+            </td>
+            <td>
+                <button onclick="plus(this)">+</button>
+
+            </td>
+            <td>
+                <button>-</button>
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                <input type="checkbox" />
+            </td>
+            <td>
+                2124
+            </td>
+            <td>
+                <button onclick="plus(this)">+</button>
+
+            </td>
+            <td>
+                <button>-</button>
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                <input type="checkbox" />
+            </td>
+            <td>
+                344
+            </td>
+            <td>
+                <button onclick="plus(this)">+</button>
+
+            </td>
+            <td>
+                <button>-</button>
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                <input type="checkbox" />
+            </td>
+            <td>
+               224
+            </td>
+            <td>
+                <button onclick="plus(this)">+</button>
+
+            </td>
+            <td>
+                <button>-</button>
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                <input type="checkbox" />
+            </td>
+            <td>
+                24
+            </td>
+            <td>
+                <button onclick="plus(this)">+</button>
+
+            </td>
+            <td>
+                <button>-</button>
+
+            </td>
+
+        </tr>
+    </table>
+    <script>
+            function plus(e)
+            {
+                 var p =   e.parentElement.previousElementSibling.textContent;
+
+                 e.parentElement.previousElementSibling.textContent = parseInt(p.trim())+1;
+              
+            }
+    </script>
+</body>
+</html>

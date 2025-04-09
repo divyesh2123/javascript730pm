@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div> Full stack
+        <input type="checkbox" />
+    <div>
+        Front-End
+    <input type="checkbox" id="front-end" onclick="handleCheckbox(this)"/>
+    <div>
+        <input type="checkbox" id="css" /> CSS
+        <input type="checkbox" id="html" /> HTML
+        <input type="checkbox" id="css" /> Javascriot
+    </div>
+    </div>
+
+    <div>
+        BACK-End
+    <input type="checkbox" id="front-end" onclick="handleCheckbox(this)"/>
+    <div>
+        <input type="checkbox" id="css" /> Node
+        <input type="checkbox" id="html" /> Expresss
+        <input type="checkbox" id="css" /> C#
+    </div>
+    </div>
+</div>
+
+    <script>
+
+        
+
+        function handleCheckbox(e)
+        {
+            console.log(e.checked);
+            
+           var d = e.nextElementSibling.querySelectorAll("input[type='checkbox']");
+           d.forEach(element => {
+
+            element.checked= e.checked;
+            
+           });
+
+           console.log(d);
+        }
+
+    </script>
+</body>
+</html>

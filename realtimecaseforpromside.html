@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+       
+        //pending
+        // resolved //succ
+        // reject // error
+        const myfunctino = (url)=>{
+
+            return new Promise((a,b)=>{
+            fetch(url).then(y=> y.json()).then(t=>{
+                    a(t)
+                }).catch(v=>{
+                    b(v)
+                });
+
+        })
+        }
+
+        myfunctino("https://jsonplaceholder.typicode.com/posts").then(y=>{
+             console.log(y);
+             //this you can use for displaying data from api
+        })
+
+        myfunctino("https://jsonplaceholder.typicode.com/comments").then(y=>{
+             console.log(y);
+              //this you can use for displaying data from api
+        })
+    </script>
+</body>
+</html>

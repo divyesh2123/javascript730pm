@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  
+
+    <table id="user"></table>
+    <table id="posts"></table>
+    
+    <script>
+        // supposed in this example only if you required to 
+        // call function within the function
+        // means callback insider the callback
+        // this case we call as call back hell(problem in javascript)
+
+        function callAPI(url,c)
+        {
+
+            fetch(url).then(y=>y.json())
+            .then(y=>{
+                c(y);
+                //code for display
+            })
+        }
+
+        function userDisplay(data)
+        {
+            
+            document.getElementById("user").innerHTML 
+             =  data.map(function(v) {
+
+                return (`<tr><td>${v.id}</td></tr>`)
+
+             }).join(" ")
+
+        }
+
+        function postsDisplay(data)
+        {
+
+            document.getElementById("posts").innerHTML 
+             =  data.map(function(v) {
+
+                return (`<tr><td>${v.title}</td></tr>`)
+
+             }).join(" ")
+
+            //logic to display post
+
+        }
+
+        callAPI("https://jsonplaceholder.typicode.com/users",userDisplay);
+        callAPI("https://jsonplaceholder.typicode.com/posts",postsDisplay);
+        // you need to create the same example with diffrent api
+        //https://jsonplaceholder.typicode.com/todos
+        //https://jsonplaceholder.typicode.com/comments
+        
+        // you need to call above 2 api using call back
+   
+   </script>
+</body>
+</html>

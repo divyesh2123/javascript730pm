@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Form to JSON</title>
+</head>
+<body>
+  <form id="userForm">
+    <label>
+      Title:
+      <select name="title" required>
+        <option value="">Select...</option>
+        <option value="Mr">Mr</option>
+        <option value="Mrs">Mrs</option>
+        <option value="Miss">Miss</option>
+        <option value="Ms">Ms</option>
+      </select>
+    </label><br><br>
+
+    <label>
+      First Name:
+      <input type="text" name="firstName" required />
+    </label><br><br>
+
+    <label>
+      Last Name:
+      <input type="text" name="lastName" required />
+    </label><br><br>
+
+    <label>
+      Email:
+      <input type="email" name="email" required />
+    </label><br><br>
+
+    <label>
+      Password:
+      <input type="password" name="password" required />
+    </label><br><br>
+
+    <label>
+      Confirm Password:
+      <input type="password" name="confirmPassword" required />
+    </label><br><br>
+
+    <label>
+      <input type="checkbox" name="acceptTerms" />
+      Accept Terms
+    </label><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById('userForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const jsonData = {
+        title: form.title.value,
+        firstName: form.firstName.value,
+        lastName: form.lastName.value,
+        email: form.email.value,
+        password: form.password.value,
+        confirmPassword: form.confirmPassword.value,
+        acceptTerms: form.acceptTerms.checked
+      };
+
+      fetch("http://localhost:4000/accounts/register",{
+        method: "post",
+        headers : {
+            'Content-Type': "application/json",
+        },
+        body : JSON.stringify(jsonData)
+      }).then(y=>y.json())  
+        .then(y=>{
+
+            console.log(y);
+        })
+      
+    });
+  </script>
+</body>
+</html>

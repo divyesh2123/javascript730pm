@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="test">This is  the example</div>
+    <div class="test">This is  the example</div>
+    <div class="test">This is  the example</div>
+    <div class="test">This is  the example</div>
+    <div class="test">This is  the example</div>
+
+<script>
+    //main diffrece would be 
+    // one is live  "getElementsByClassName"
+    // static is querySelectorAll
+
+    let a= document.getElementsByClassName("test");
+
+    let b = document.querySelectorAll(".test");
+
+    let s= document.createElement("div");
+    s.className = "test";
+
+    document.body.append(s);
+
+
+
+    console.log(a.length);
+    console.log(b.length);
+
+</script>
+</body>
+</html>

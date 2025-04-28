@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+        <input type="text" id="name"/>
+        <button onclick="saveInfo()">save </button>
+
+        <div id="display">
+
+        </div>
+    
+
+        <script>
+            let todoitems =[];
+            let index=-1;
+
+            function saveInfo()
+            {
+                let p = document.getElementById("name").value;
+            if(index <0)
+            {
+               
+                todoitems.push(p);
+            }
+            else
+            {
+                todoitems[index]=p;
+            }
+                displayInfo();
+
+            }
+
+            function displayInfo()
+            {   
+                let items= todoitems.map(function(e,index){
+
+                    return `<div>${e}
+                                <button onclick="editItem(${index})">Edit</button>
+                         <button onclick="removeItem(${index})">Delete</button>
+                        </div>`
+                });
+
+                document.getElementById("display").innerHTML = items.join(" ");
+
+            }
+
+            function removeItem(index)
+            {
+                todoitems.splice(index,1);
+                displayInfo();
+
+            }
+
+            function editItem(a)
+            {
+                document.getElementById("name").value= todoitems[a];
+                index=a;
+            }
+        </script>
+</body>
+</html>

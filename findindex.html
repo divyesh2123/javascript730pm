@@ -7,15 +7,16 @@
 </head>
 <body>
     <script>
+        let array = [12,33,-12,22,-22,122];
 
-        let myarray= [3,5,6,7,23,33];
+        let op = array.findLastIndex(function(v)
+        {
+            return v <0;
 
-       
+        });
 
-for (const element of myarray) {
-    
-    console.log(element);
-}
+        console.log(op);
+
 
     </script>
 </body>

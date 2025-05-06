@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<form onsubmit="handleSubmit(event)">
+
+    <input type="text" id="fname"/>
+    <span id="error-fname"></span>
+    <input type="text" id="lname"/>
+    <span id="error-lname"></span>
+    <input type="submit" value="save"/>
+
+</form>
+    <script>
+
+            function handleSubmit(e)
+            {
+                e.preventDefault();
+
+                let obj1 = {
+                    "fname": document.getElementById("fname").value,
+                    "lname": document.getElementById("lname").value
+                };
+
+                for (const key in obj1)
+                {
+                    let value = obj1[key];
+                    
+                    switch(key)
+                    {
+
+                    case "fname": 
+
+                    if(!value)
+                    {
+                        document.getElementById(`error-${key}`).innerHTML = "firstNAme is required";
+
+                    }
+                    else if(value.length <2)
+                    {
+                        document.getElementById(`error-${key}`).innerHTML = "firstNAme should have min 2 char";
+                    }
+                        break;
+
+                    case "lname":
+
+                        break;
+
+                    default: 
+
+                        console.log("not matched the case");
+                        break;
+
+
+                    }
+                }
+
+            }
+
+            /*
+                 you need to do validation using switch try to create registration page
+                 and try to apply all possible validation on registration page
+            
+            */
+    </script>
+</body>
+</html>
